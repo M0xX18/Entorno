@@ -71,3 +71,16 @@ git submodule update --init --recursive
 meson --buildtype=release . build
 ninja -C build
 sudo ninja -C build install
+cd ~
+
+cp -r ./home-m0xx/ ~
+cp -r ./home-root/ /root
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/powerlevel10k/
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>/root/.zshrc
+
+sudo ln -s /home/m0xx/.zshrc /root/.zshrc
+
+echo -e "\e[1;32mEl entorno fue completamente instalado en el dispositivo.\e[0m"
