@@ -28,7 +28,7 @@ fi
 
 echo -e "\e[1;34mInstalando dependencias necesarias...\e[0m"
 sleep 2
-sudo apt install -y neovim kitty build-essential git vim libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev kitty libxinerama1 libxinerama-dev cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libuv1-dev libnl-genl-3-dev libxinerama1 libxinerama-dev meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev libxcb-glx0-dev bspwm libpcre3 libpcre3-dev libxinerama-dev
+sudo apt install -y neovim bspwm kitty build-essential git vim libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev kitty libxinerama1 libxinerama-dev cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libuv1-dev libnl-genl-3-dev libxinerama1 libxinerama-dev meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev libxcb-glx0-dev bspwm libpcre3 libpcre3-dev libxinerama-dev
  
 if [ "$distro" == "Kali" ]; then
   sudo apt update && sudo apt upgrade -y
@@ -88,7 +88,7 @@ esac
 
 bspc node -z "$dir" "$x" "$y" || bspc node -z "$falldir" "$x" "$y"' > /home/m0xx/.config/bspwm/scripts/bspwm_resize
 
-chmod +x /home/m0xx/.config/bspwm/scripts/bspwm_resize
+chmod +x ~/.config/bspwm/scripts/bspwm_resize
 
 echo -e "\e[1;34mClonando y compilando polybar...\e[0m"
 sleep 1
@@ -119,6 +119,18 @@ cp -r /home/m0xx/Entorno/home-root/.config /root
 cp -r /home/m0xx/Entorno/home-root/.fehbg /root
 cp -r /home/m0xx/Entorno/home-root/.p10k.zhs /root
 cp -r /home/m0xx/Entorno/home-root/.zsh_history /root
+
+chmod +x ~/.config/bspwm/bspwmrc
+chmod +x ~/.config/bspwm/scripts/bspwm_resize
+chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/forest/scripts/target.sh
+chmod +x ~/.config/polybar/forest/scripts/screenshot.sh
+
+echo -e "\e[1;34mInstalando las fonts correspondientes...\e[0m"
+mkdir /tmp/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip -O /tmp/fonts/Hack.zip
+unzip /tmp/fonts/Hack.zip -d /tmp/fonts
+font-manager -i /tmp/fonts/*.ttf
 
 echo -e "\e[1;34mConfigurando powerlevel10k...\e[0m"
 sleep 1
