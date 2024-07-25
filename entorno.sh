@@ -10,7 +10,7 @@ echo "
 "
 
 sleep 2
-echo -e "\tEntorno - Script de instalacion automatica de entorno de trabajo."
+echo -e "\tEntorno - Script de instalacion automatizada."
 echo -e "\t\t𝐴𝑛𝑑𝑟𝑒𝑠 𝐺𝑎𝑟𝑐𝑖𝑎 (Aka. 𝐌𝟎𝐱𝐗)"
 sleep 3
 echo -e "\nIniciando instalacion..\n"
@@ -115,7 +115,10 @@ echo -e "\e[1;34mCopiando archivos de configuración...\e[0m"
 sleep 1
 cd ~
 cp -r /home/m0xx/Entorno/home-m0xx/* ~
-cp -r /home/m0xx/Entorno/home-root/* /root
+cp -r /home/m0xx/Entorno/home-root/.config /root
+cp -r /home/m0xx/Entorno/home-root/.fehbg /root
+cp -r /home/m0xx/Entorno/home-root/.p10k.zhs /root
+cp -r /home/m0xx/Entorno/home-root/.zsh_history /root
 
 echo -e "\e[1;34mConfigurando powerlevel10k...\e[0m"
 sleep 1
