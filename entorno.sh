@@ -136,8 +136,8 @@ echo -e "\e[1;34mConfigurando powerlevel10k...\e[0m"
 sleep 1
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/powerlevel10k/
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>/root/.zshrc
+sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/powerlevel10k/
+sudo echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>/root/.zshrc
 
 echo -e "\e[1;34mCreando enlace simbólico para .zshrc de root...\e[0m"
 sleep 1
