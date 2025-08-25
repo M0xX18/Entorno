@@ -11,7 +11,7 @@ echo "
 
 sleep 2
 echo -e "\tEntorno - Script de instalacion automatizada."
-echo -e "\t\t𝐴𝑛𝑑𝑟𝑒𝑠 𝐺𝑎𝑟𝑐𝑖𝑎 (Aka. 𝐌𝟎𝐱𝐗)"
+echo -e "\t\t𝐴𝑛𝑑𝑟𝑒𝑠 𝐺𝑎𝑟𝑐𝑖𝑎 (𝐌𝟎𝐱𝐗)"
 sleep 3
 echo -e "\nIniciando instalacion..\n"
 sleep 4
@@ -28,7 +28,7 @@ fi
 
 echo -e "\e[1;34mInstalando dependencias necesarias...\e[0m"
 sleep 2
-sudo apt install -y neovim bspwm kitty build-essential git vim libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev kitty libxinerama1 libxinerama-dev cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libuv1-dev libnl-genl-3-dev libxinerama1 libxinerama-dev meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev libxcb-glx0-dev bspwm libpcre3 libpcre3-dev libxinerama-dev
+sudo apt install -y neovim bspwm polybar kitty build-essential git vim libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev kitty libxinerama1 libxinerama-dev cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libuv1-dev libnl-genl-3-dev libxinerama1 libxinerama-dev meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev libxcb-glx0-dev bspwm libpcre3 libpcre3-dev libxinerama-dev rofi
  
 if [ "$distro" == "Kali" ]; then
   sudo apt update && sudo apt upgrade -y
@@ -115,10 +115,12 @@ echo -e "\e[1;34mCopiando archivos de configuración...\e[0m"
 sleep 1
 cd ~
 cp -r /home/m0xx/Entorno/home-m0xx/* ~
-cp -r /home/m0xx/Entorno/home-root/.config /root
-cp -r /home/m0xx/Entorno/home-root/.fehbg /root
-cp -r /home/m0xx/Entorno/home-root/.p10k.zhs /root
-cp -r /home/m0xx/Entorno/home-root/.zsh_history /root
+cp -r /home/m0xx/Entorno/home-m0xx/.* ~
+
+sudo cp -r /home/m0xx/Entorno/home-root/.config /root
+sudo cp -r /home/m0xx/Entorno/home-root/.fehbg /root
+sudo cp -r /home/m0xx/Entorno/home-root/.p10k.zsh /root
+sudo cp -r /home/m0xx/Entorno/home-root/.zsh_history /root
 
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/bspwm/scripts/bspwm_resize
