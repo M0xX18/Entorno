@@ -135,3 +135,15 @@ super + shift + f
 # i3lock
 super + shift + x
         /usr/bin/i3lock-fancy
+
+# Subir volumen con XF86AudioRaiseVolume
+XF86AudioRaiseVolume
+    amixer set Master 5%+
+
+# Bajar volumen con XF86AudioLowerVolume
+XF86AudioLowerVolume
+    amixer set Master 5%-
+
+# Silenciar volumen con XF86AudioMute
+XF86AudioMute
+    amixer set Master toggle

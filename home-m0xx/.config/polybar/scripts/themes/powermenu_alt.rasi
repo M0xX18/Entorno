@@ -1,5 +1,5 @@
 configuration {
-    font:                           "Iosevka Nerd Font 10";
+    font:                           "Hack Nerd Font 11";
     show-icons:                     false;
 	icon-theme: 					"Papirus";
     display-drun: 					":";
@@ -35,7 +35,8 @@ prompt {
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"";
+	str: 							"M0xX";
+	size:							18px;
     background-color:               @background;
     text-color:                     @logo;
     padding:                        5px 0px 0px 10px;
